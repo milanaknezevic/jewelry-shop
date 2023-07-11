@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="kupac">
+    <Key>
+      <PropertyRef Name="kupac_id" />
+    </Key>
+    <Property Name="kupac_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="pasword" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tema" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kupovina">
+    <Key>
+      <PropertyRef Name="kupovina_id" />
+    </Key>
+    <Property Name="KUPAC_kupac_id" Type="int" Nullable="false" />
+    <Property Name="kupovina_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kupovina_stavka">
+    <Key>
+      <PropertyRef Name="NAKIT_nakit_id" />
+      <PropertyRef Name="KUPOVINA_kupovina_id" />
+    </Key>
+    <Property Name="NAKIT_nakit_id" Type="int" Nullable="false" />
+    <Property Name="KUPOVINA_kupovina_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nakit">
+    <Key>
+      <PropertyRef Name="nakit_id" />
+    </Key>
+    <Property Name="nakit_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gramaza" Type="double" Nullable="false" />
+    <Property Name="cijena" Type="decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="ZAPOSLENI_JMBG" Type="char" MaxLength="13" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zaposleni">
+    <Key>
+      <PropertyRef Name="JMBG" />
+    </Key>
+    <Property Name="JMBG" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="pasword" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="broj_telefona" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="tema" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_KUPOVINA_KUPAC1">
+    <End Role="kupac" Type="Self.kupac" Multiplicity="1" />
+    <End Role="kupovina" Type="Self.kupovina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kupac">
+        <PropertyRef Name="kupac_id" />
+      </Principal>
+      <Dependent Role="kupovina">
+        <PropertyRef Name="KUPAC_kupac_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_NAKIT_has_KUPOVINA_KUPOVINA1">
+    <End Role="kupovina" Type="Self.kupovina" Multiplicity="1" />
+    <End Role="kupovina_stavka" Type="Self.kupovina_stavka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kupovina">
+        <PropertyRef Name="kupovina_id" />
+      </Principal>
+      <Dependent Role="kupovina_stavka">
+        <PropertyRef Name="KUPOVINA_kupovina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_NAKIT_has_KUPOVINA_NAKIT1">
+    <End Role="nakit" Type="Self.nakit" Multiplicity="1" />
+    <End Role="kupovina_stavka" Type="Self.kupovina_stavka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nakit">
+        <PropertyRef Name="nakit_id" />
+      </Principal>
+      <Dependent Role="kupovina_stavka">
+        <PropertyRef Name="NAKIT_nakit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_NAKIT_ZAPOSLENI">
+    <End Role="zaposleni" Type="Self.zaposleni" Multiplicity="1" />
+    <End Role="nakit" Type="Self.nakit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zaposleni">
+        <PropertyRef Name="JMBG" />
+      </Principal>
+      <Dependent Role="nakit">
+        <PropertyRef Name="ZAPOSLENI_JMBG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mydbModelStoreContainer">
+    <EntitySet Name="kupac" EntityType="Self.kupac" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="kupovina" EntityType="Self.kupovina" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="kupovina_stavka" EntityType="Self.kupovina_stavka" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="nakit" EntityType="Self.nakit" Schema="mydb" store:Type="Tables" />
+    <EntitySet Name="zaposleni" EntityType="Self.zaposleni" Schema="mydb" store:Type="Tables" />
+    <AssociationSet Name="fk_KUPOVINA_KUPAC1" Association="Self.fk_KUPOVINA_KUPAC1">
+      <End Role="kupac" EntitySet="kupac" />
+      <End Role="kupovina" EntitySet="kupovina" />
+    </AssociationSet>
+    <AssociationSet Name="fk_NAKIT_has_KUPOVINA_KUPOVINA1" Association="Self.fk_NAKIT_has_KUPOVINA_KUPOVINA1">
+      <End Role="kupovina" EntitySet="kupovina" />
+      <End Role="kupovina_stavka" EntitySet="kupovina_stavka" />
+    </AssociationSet>
+    <AssociationSet Name="fk_NAKIT_has_KUPOVINA_NAKIT1" Association="Self.fk_NAKIT_has_KUPOVINA_NAKIT1">
+      <End Role="nakit" EntitySet="nakit" />
+      <End Role="kupovina_stavka" EntitySet="kupovina_stavka" />
+    </AssociationSet>
+    <AssociationSet Name="fk_NAKIT_ZAPOSLENI" Association="Self.fk_NAKIT_ZAPOSLENI">
+      <End Role="zaposleni" EntitySet="zaposleni" />
+      <End Role="nakit" EntitySet="nakit" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

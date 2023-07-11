@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mydbModelStoreContainer" CdmEntityContainer="mydbEntities8">
+    <EntitySetMapping Name="kupac">
+      <EntityTypeMapping TypeName="mydbModel.kupac">
+        <MappingFragment StoreEntitySet="kupac">
+          <ScalarProperty Name="kupac_id" ColumnName="kupac_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pasword" ColumnName="pasword" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tema" ColumnName="tema" />
+          <ScalarProperty Name="jezik" ColumnName="jezik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kupovina_stavka">
+      <EntityTypeMapping TypeName="mydbModel.kupovina_stavka">
+        <MappingFragment StoreEntitySet="kupovina_stavka">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="KUPAC_kupac_id" ColumnName="KUPAC_kupac_id" />
+          <ScalarProperty Name="NAKIT_nakit_id" ColumnName="NAKIT_nakit_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nakit">
+      <EntityTypeMapping TypeName="mydbModel.nakit">
+        <MappingFragment StoreEntitySet="nakit">
+          <ScalarProperty Name="nakit_id" ColumnName="nakit_id" />
+          <ScalarProperty Name="gramaza" ColumnName="gramaza" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="ZAPOSLENI_JMBG" ColumnName="ZAPOSLENI_JMBG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zaposleni">
+      <EntityTypeMapping TypeName="mydbModel.zaposleni">
+        <MappingFragment StoreEntitySet="zaposleni">
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pasword" ColumnName="pasword" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+          <ScalarProperty Name="tema" ColumnName="tema" />
+          <ScalarProperty Name="jezik" ColumnName="jezik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

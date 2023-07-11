@@ -1,0 +1,56 @@
+﻿<Window x:Class="HCI_PRODAVNICA_NAKITAnew.KupacKupujeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HCI_PRODAVNICA_NAKITAnew"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       
+        mc:Ignorable="d"
+        Title="KupacKupujeWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.Background>
+
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="{DynamicResource startColor}" Offset="1"/>
+                <GradientStop Color="{DynamicResource endColor}" Offset="0"/>
+            </LinearGradientBrush>
+
+        </Grid.Background>
+
+        <Border Height="380" VerticalAlignment="Top" CornerRadius="0 0 180 180" Background="WhiteSmoke" Margin="0,0,-0.4,0" >
+            <Button x:Name="KupiButton" Content="{DynamicResource kupi}" Click="KupiButton_Click" Background="{DynamicResource buttonBackground}" Foreground="{DynamicResource fontColor}" Height="Auto" Margin="434,326,285,20"/>
+        </Border>
+
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" x:Name="grid1" CanUserDeleteRows="True" HorizontalAlignment="Left" Height="264" Margin="205,57,0,0" VerticalAlignment="Top" Width="516" SelectionChanged="grid1_SelectionChanged" Foreground="{DynamicResource fontColor}" Background="{DynamicResource buttonBackground}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource headerNayiv}" Width="Auto" Binding="{Binding naziv}"/>
+                <DataGridTextColumn Header="{DynamicResource headerCijena}"  Width="Auto" Binding="{Binding cijena}"/>
+                <DataGridTextColumn Header="{DynamicResource headerGramaza}" Width="Auto" Binding="{Binding gramaza}"/>
+                <DataGridTextColumn Header="{DynamicResource headerKolicina}" Width="Auto" Binding="{Binding kolicina}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Margin="0,0,634.6,0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                    <GradientStop Color="{DynamicResource startColor}" Offset="1"/>
+                    <GradientStop Color="{DynamicResource endColor}" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox x:Name="pretraziTextBox" HorizontalAlignment="Left" Height="23" Margin="10,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="pretraziTextBox_TextChanged"/>
+            <Button x:Name="PretraziButton" Content="{DynamicResource pretraziPoNazivu}" HorizontalAlignment="Left" Click="PretraziButton_Click" Margin="0,167,0,0" Foreground="{DynamicResource fontColor}" Background="{DynamicResource fontColor1}" VerticalAlignment="Top" Width="155" Height="34"/>
+        </Grid>
+
+
+        <Button Margin="726,10,23,390.6"  Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{DynamicResource fontColor1}"
+                 ToolTip="Close"  x:Name="btnExit" Click="btnExit_Click" Height="Auto" Width="Auto">
+            <materialDesign:PackIcon Kind="Close"  BorderBrush="{DynamicResource darkSeaGreen}" Foreground="{DynamicResource fontColor}" Width="30" Height="30" />
+
+        </Button>
+
+       
+
+    </Grid>
+</Window>

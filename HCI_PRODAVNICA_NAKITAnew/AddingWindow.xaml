@@ -1,0 +1,79 @@
+﻿<Window x:Class="HCI_PRODAVNICA_NAKITAnew.AddingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HCI_PRODAVNICA_NAKITAnew"
+         mc:Ignorable="d" 
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     
+        Title="Adding" Height="370" Width="800"
+
+   
+
+    WindowStartupLocation="CenterScreen" WindowStyle="None" 
+    ResizeMode="NoResize">
+
+
+
+    <Grid>
+
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                    <GradientStop Color="{DynamicResource startColor}" Offset="1"/>
+                    <GradientStop Color="{DynamicResource endColor}" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Border Height="330" VerticalAlignment="Top" CornerRadius="0 0 180 180" Background="White" />
+        </Grid>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="Auto" x:Name="korpaGrid" CanUserDeleteRows="True" HorizontalAlignment="Left" Height="236" Margin="286,35,0,0" VerticalAlignment="Top" Width="382" Foreground="{DynamicResource fontColor}" Background="{DynamicResource buttonBackground}" SelectionChanged="korpaGrid_SelectionChanged">
+            <DataGrid.Columns>
+               <DataGridTextColumn Header="{DynamicResource headerNayiv}" Width="Auto" Binding="{Binding naziv}"/>
+                <DataGridTextColumn Header="{DynamicResource headerCijena}"  Width="Auto" Binding="{Binding cijena}"/>
+                <DataGridTextColumn Header="{DynamicResource headerGramaza}" Width="Auto" Binding="{Binding gramaza}"/>
+                <DataGridTextColumn Header="{DynamicResource headerKolicina}" Width="Auto" Binding="{Binding kolicina}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button x:Name="dodajUKorpuButton"    Content="{DynamicResource dodajButton}" HorizontalAlignment="Left" Margin="286,286,0,0" VerticalAlignment="Top" Width="175" RenderTransformOrigin="1.189,-0.419" Height="36" FontSize="20"  Foreground="{DynamicResource fontColor}" Background="{DynamicResource buttonBackground}" Click="dodajUKorpuButton_Click"/>
+        <Button x:Name="potvdiButton" Content="{DynamicResource potvrdiButton}" HorizontalAlignment="Left" Margin="536,287,0,0" VerticalAlignment="Top" Width="132" Height="35" FontSize="20" Click="potvdiButton_Click" Foreground="{DynamicResource fontColor}" Background="{DynamicResource buttonBackground}"/>
+
+        <Button Margin="733,10,10,310.6"  Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{DynamicResource fontColor1}"
+                 ToolTip="Close"  x:Name="goBackButton" Click="goBackButton_Click" Height="Auto" Width="Auto" >
+            <materialDesign:PackIcon Kind="Close"  BorderBrush="{DynamicResource darkSeaGreen}" Foreground="{DynamicResource fontColor}" Width="30" Height="30" />
+
+        </Button>
+       
+
+        <Grid Margin="0,0,543,-0.4">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                    <GradientStop Color="{DynamicResource startColor}" Offset="1"/>
+                    <GradientStop Color="{DynamicResource endColor}" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+
+            <StackPanel HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="251">
+            </StackPanel>
+            <TextBox x:Name="nazivTextBox"  Foreground="{DynamicResource fontColor}" HorizontalAlignment="Left" Height="46" Margin="33,60,0,0" TextWrapping="Wrap"  TextChanged="nazivTextBox_TextChanged" VerticalAlignment="Top" Width="120" />
+            <Label x:Name="nazivLabela"       Foreground="{DynamicResource fontColor}"  Content="{DynamicResource nazivLabela}" HorizontalAlignment="Left" Margin="33,23,0,0"  VerticalAlignment="Top" FontSize="20" Width="120"  Height="32"/>
+            <Label x:Name="cijenaLabela"      Foreground="{DynamicResource fontColor}"   Content="{DynamicResource cijenaLabela}" HorizontalAlignment="Left" Margin="33,106,0,0" VerticalAlignment="Top" FontSize="20" Width="120" />
+            <TextBox x:Name="cijenaTextBox"   Foreground="{DynamicResource fontColor}"  HorizontalAlignment="Left"  Height="34" Margin="33,145,0,0" TextWrapping="Wrap" TextChanged="cijenaTextBox_TextChanged" VerticalAlignment="Top" Width="120" />
+            <Label x:Name="gramazaLabel"      Foreground="{DynamicResource fontColor}"   Content="{DynamicResource gramazaLabela}" HorizontalAlignment="Left" Margin="33,184,0,0" VerticalAlignment="Top" FontSize="20" Width="120"/>
+            <TextBox x:Name="gramazaTextBox"  Foreground="{DynamicResource fontColor}"   HorizontalAlignment="Left" Height="34" Margin="33,223,0,0" TextWrapping="Wrap" TextChanged="gramazaTextBox_TextChanged" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="kolicinaLabel"      Foreground="{DynamicResource fontColor}" Content="{DynamicResource kolicinaLabela}" HorizontalAlignment="Left" Margin="33,262,0,0" VerticalAlignment="Top" FontSize="20" Width="120"/>
+            <TextBox x:Name="kolicinaTextBox"  Foreground="{DynamicResource fontColor}" HorizontalAlignment="Left" Height="30" Margin="33,301,0,0" TextWrapping="Wrap" TextChanged="kolicinaTextBox_TextChanged" VerticalAlignment="Top" Width="120"/>
+
+
+
+
+        </Grid>
+        <Button x:Name="obrisiStavkuButton" Content="{DynamicResource obrisiButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="35" FontSize="20" Click="obrisiStavkuButton_Click" Foreground="{DynamicResource fontColor}" Background="{DynamicResource buttonBackground}" Margin="684,123,0,0"/>
+
+    </Grid>
+</Window>

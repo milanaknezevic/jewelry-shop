@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF">
+
+    <SolidColorBrush x:Key="background" Color="White"/>
+    <SolidColorBrush x:Key="fontColor" Color="Black"/>
+    <SolidColorBrush x:Key="infoColor" Color="#FF424242"/>
+    <SolidColorBrush x:Key="Header" Color="DarkTurquoise"/>
+    <SolidColorBrush x:Key="fontColor1" Color="DarkTurquoise"/>
+    <Color x:Key="startColorPom">#1e90ff</Color>
+    <Color x:Key="startColor">#00ccff</Color> 
+    <Color x:Key="endColor">#00ff00</Color>
+
+    <Color x:Key="dashboardStartColor">#FF65B77E</Color>
+    <Color x:Key="dashboardEndColor">#FFEEF3F1</Color>
+    <SolidColorBrush x:Key="dashboardHeadingBackground" Color="#FF9F8CE0"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="buttonBackground" Color="DarkTurquoise"></SolidColorBrush>
+    <Color x:Key="buttonBorderBrush"></Color>
+
+</ResourceDictionary>

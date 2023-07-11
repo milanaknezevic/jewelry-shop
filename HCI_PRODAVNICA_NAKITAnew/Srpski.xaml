@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="loginButton">Prijavite se</system:String>
+    <system:String x:Key="textBlock">Prijava korisnika</system:String>
+    <system:String x:Key="unesiUsername">Unesite korisničko ime</system:String>
+
+    
+    <system:String x:Key="nazivLabela">Naziv</system:String>
+    <system:String x:Key="cijenaLabela">Cijena</system:String>
+    <system:String x:Key="gramazaLabela">Gramaza</system:String>
+    <system:String x:Key="kolicinaLabela">Količina</system:String>
+    <system:String x:Key="dodajButton">Dodaj u korpu</system:String>
+    <system:String x:Key="potvrdiButton">Potvrdi</system:String>
+    <system:String x:Key="obrisiButton">Obriši</system:String>
+    <system:String x:Key="headerId">ID</system:String>
+    <system:String x:Key="headerNayiv">NAZIV</system:String>
+    <system:String x:Key="headerCijena">CIJENA (KM)</system:String>
+    <system:String x:Key="headerGramaza">GRAMAŽA (g)</system:String>
+    <system:String x:Key="headerKolicina">KOLICINA</system:String>
+
+    
+    <system:String x:Key="azuriraj">Ažuriraj nakit</system:String>
+    <system:String x:Key="brisanje">Selektuj za brisanje</system:String>
+    <system:String x:Key="dodaj">Dodaj nakit</system:String>
+    <system:String x:Key="profil">Moj profil</system:String>
+    <system:String x:Key="odjaviSeButton">ODJAVITE SE</system:String>
+
+    <system:String x:Key="novaCijena">Nova cijena</system:String>
+    <system:String x:Key="novaKolicina">Nova količina</system:String>
+
+
+    <system:String x:Key="korisnickIme">Korisničko ime:</system:String>
+    <system:String x:Key="loyinka">Lozinka:</system:String>
+    <system:String x:Key="email">Email:</system:String>
+    <system:String x:Key="brojTel">Broj telefona:</system:String>
+    <system:String x:Key="edit">Uredi</system:String>
+    <system:String x:Key="save">Sačuvaj</system:String>
+
+    <system:String x:Key="nakit">Nakit</system:String>
+    <system:String x:Key="mojeKupovine">Moje kupovine</system:String>
+    <system:String x:Key="zatvori">Zatvori</system:String>
+
+
+    <system:String x:Key="pretraziPoNazivu">Pretraži po nazivu</system:String>
+    <system:String x:Key="kupi">Kupi</system:String>
+
+
+
+    <system:String x:Key="teme">Teme:</system:String>
+    <system:String x:Key="jezik">Jezik:</system:String>
+    <system:String x:Key="tema1">Zlatna</system:String>
+    <system:String x:Key="jezik1">Srpski</system:String>
+    <system:String x:Key="tem3">Roza</system:String>
+    <system:String x:Key="jezik2">Engleski</system:String>
+    <system:String x:Key="tema2">Plava</system:String>
+    
+
+</ResourceDictionary>
